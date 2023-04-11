@@ -276,8 +276,8 @@ RNAi_hsp16
 
 align_r <- cowplot::align_plots(RNAi_hsp16,expres_plot_cct ,align = 'v')#, align = 'v', axis = 'l')
 
-top_row <- plot_grid(align_r [[1]], NULL, RNAi_hsp70, ncol =3, rel_widths = c(1,0.05, 1))
-bottom_row <- plot_grid(align_r [[2]],NULL, expres_plot_hsp16,NULL, expres_plot_hsp70, ncol =5, rel_widths = c(1,0.05,1,0.05, 1))
+bottom_row <- plot_grid(align_r [[1]], NULL, RNAi_hsp70, ncol =3, rel_widths = c(1,0.05, 1))
+top_row <- plot_grid(align_r [[2]],NULL, expres_plot_hsp16,NULL, expres_plot_hsp70, ncol =5, rel_widths = c(1,0.05,1,0.05, 1))
 
 #full <- plot_grid(NULL, top_row,NULL, bottom_row, labels = c( "","A","","B"), label_size = 12, ncol = 1, rel_heights = c(0.01,1,0.01,1))
 
@@ -299,76 +299,75 @@ add_sign <- ggdraw(add_labels )+
   ##cct-8
   
   draw_line(x = c(0.135,0.185),
-            y = c(0.405), #0.87
+            y = c(0.905), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.25,0.30),
-            y = c(0.405), #0.87
+            y = c(0.905), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.16), #c(0.125),
-            y = c(0.405,.42), #0.87
+            y = c(0.905,.92), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.275), #c(0.255),
-            y = c(0.405,.42), #0.87
+            y = c(0.905,.92), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.16,0.275),
-            y = c(0.42), #0.87
+            y = c(0.92), #0.87
             color = "black", size = .5) +
   
   ### hsp-70  
   
   draw_line(x = c(0.785,0.835),
-            y = c(0.405), #0.87
+            y = c(0.905), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.895,0.945),
-            y = c(0.405), #0.87
+            y = c(0.905), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.81), #c(0.785),
-            y = c(0.405,.42), #0.87
+            y = c(0.905,.92), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.92),# c(0.915),
-            y = c(0.405,.42), #0.87
+            y = c(0.905,.92), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.81,0.92),
-            y = c(0.42), #0.87
+            y = c(0.92), #0.87
             color = "black", size = .5) +
   
   ## hsp16.2 RNAi -control cct8
   draw_line(x = c(0.135), #c(0.785),
-            y = c(0.915,0.925), #0.87
+            y = c(0.415,0.425), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.26),# c(0.915),
-            y = c(0.915,0.925), #0.87
+            y = c(0.415,0.425), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.185), #c(0.785),
-            y = c(0.895,0.905), #0.87
+            y = c(0.395,0.405), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.26),# c(0.915),
-            y = c(0.895,0.905), #0.87
+            y = c(0.395,0.405), #0.87
             color = "black", size = .5
   ) +
   draw_line(x = c(0.135,0.26),
-            y = c(0.925), #0.87
+            y = c(0.425), #0.87
             color = "black", size = .5) +
   draw_line(x = c(0.185,0.26),
-            y = c(0.905), #0.87
+            y = c(0.405), #0.87
             color = "black", size = .5) +
-  draw_label("**", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.2075, y = 0.424) +
-  draw_label("***", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.865, y = 0.424) +
-  draw_label("*", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.1975, y = 0.929) +
-  draw_label("*", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.2225, y = 0.909) 
+  draw_label("**", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.2075, y = 0.924) +
+  draw_label("***", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.865, y = 0.924) +
+  draw_label("*", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.1975, y = 0.429) +
+  draw_label("*", color = "black", size = 18, fontface = "bold", angle = 0, x = 0.2225, y = 0.409) 
 
-
-#add_sign 
+#save
 ggsave2("OUT/PZQ_Figure3.png", add_sign , height = 7.5, width = 7.5)
 
